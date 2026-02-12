@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Course Materials Assistant</title>
+    <link rel="stylesheet" href="style.css?v=27">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Navigation Bar -->
+        <nav class="navbar">
+            <div class="navbar-content">
+                <div class="navbar-left">
+                    <h1 class="navbar-title">Course Materials Assistant</h1>
+                    <div class="course-count-badge">
+                        <span id="courseCountBadge">-</span> courses
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="menuDrawer" class="menu-drawer">
+            <div class="menu-drawer-content">
+                <!-- New Chat Button -->
+                <div class="menu-section new-chat-section">
+                    <button id="newChatButton" class="new-chat-button" aria-label="Start a new chat">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                        <span>NEW CHAT</span>
+                    </button>
+                </div>
+
+                <!-- Course Stats -->
+                <div class="menu-section">
+                    <button class="collapsible-header" data-section="courses" aria-expanded="true">
+                        <h3 class="menu-section-title">Available Courses</h3>
+                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="collapsible-content" data-content="courses">
+                        <div class="course-stats" id="courseStats">
+                            <div class="course-titles" id="courseTitles">
+                                <span class="loading">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suggested Questions -->
+                <div class="menu-section">
+                    <button class="collapsible-header" data-section="questions" aria-expanded="true">
+                        <h3 class="menu-section-title">Try Asking</h3>
+                        <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="collapsible-content" data-content="questions">
+                        <div class="suggested-items">
+                            <button class="suggested-item" data-question="What is the outline of the &quot;MCP: Build Rich-Context AI Apps with Anthropic&quot; course?">Outline of a course</button>
+                            <button class="suggested-item" data-question="Are there any courses that include a Chatbot implementation?">Courses about Chatbot</button>
+                            <button class="suggested-item" data-question="Are there any courses that explain what RAG is?">Courses explaining RAG</button>
+                            <button class="suggested-item" data-question="What was covered in lesson 5 of the MCP course?">Details of a course's lesson</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlay for menu -->
+        <div id="menuOverlay" class="menu-overlay"></div>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages"></div>
+                <div class="chat-input-container">
+                    <input
+                        type="text"
+                        id="chatInput"
+                        placeholder="Ask about courses, lessons, or specific content..."
+                        autocomplete="off"
+                    >
+                    <button id="sendButton" aria-label="Send message">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js?v=14"></script>
+</body>
+</html>
